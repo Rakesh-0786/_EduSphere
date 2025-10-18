@@ -12,7 +12,6 @@ function CarouselSlide({image, title, description, slideNumber, totalSlides}) {
                             <a href={`#slide${(slideNumber) % totalSlides + 1}`} className="btn btn-circle">❯</a>
                         </div>
                     </div>
-                    
                 </div> 
     );
 }

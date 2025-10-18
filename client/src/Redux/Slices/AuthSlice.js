@@ -4,11 +4,18 @@ import toast from "react-hot-toast";
 import axiosInstance from "../../Helpers/axiosInstance"
 
 
-const initialState ={
-    isLoggedIn: localStorage.getItem('isLoggedIn') || false,
-    role: localStorage.getItem('role') || "",
-    // data: localStorage.getItem('data') || {}
-    data: localStorage.getItem('data') != undefined ? JSON.parse(localStorage.getItem('data')) : {}
+const initialState = {
+  isLoggedIn: localStorage.getItem('isLoggedIn') === 'true', // Convert to boolean
+  role: localStorage.getItem('role') || "",
+  data: (() => {
+    const storedData = localStorage.getItem('data');
+    try {
+      return storedData ? JSON.parse(storedData) : {};
+    } catch (error) {
+      console.error("Failed to parse localStorage data:", error);
+      return {};
+    }
+  })(),
 };
 
 export const createAccount = createAsyncThunk("/auth/signup", async (data) => {

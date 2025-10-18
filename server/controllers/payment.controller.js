@@ -210,18 +210,18 @@ const allPayments = async (req, res, next) => {
     ];
 
     const finalMonths = {
-      January: 0,
-      February: 0,
-      March: 0,
-      April: 0,
-      May: 0,
-      June: 0,
-      July: 0,
-      August: 0,
-      September: 0,
-      October: 0,
-      November: 0,
-      December: 0,
+      January: 10,
+      February: 10,
+      March: 20,
+      April: 40,
+      May: 70,
+      June: 30,
+      July: 20,
+      August: 10,
+      September: 30,
+      October: 50,
+      November: 50,
+      December: 10,
     };
 
     const monthlyWisePayments = subscriptions.items.map((payment) => {

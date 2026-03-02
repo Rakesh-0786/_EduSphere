@@ -125,7 +125,7 @@ function Checkout() {
       return;
     }
 
-    // 🔥 Updated Razorpay options with UPI, QR Code, Google Pay, PhonePe enabled
+    //  Updated Razorpay options with UPI, QR Code, Google Pay, PhonePe enabled
     const options = {
       key: razorpayKey,
       subscription_id: subscription_id,
@@ -134,7 +134,7 @@ function Checkout() {
       theme: {
         color: '#F37254'
       },
-      // 🔥 Enable UPI with QR Code, Intent, and Collect flows
+      //  Enable UPI with QR Code, Intent, and Collect flows
       config: {
         display: {
           blocks: {
